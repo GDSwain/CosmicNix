@@ -30,6 +30,7 @@
     git
     qemu
     emacs
+    mesa-demos
 
     # ==================== #
     #   GUI Applications   #
@@ -37,6 +38,7 @@
 
     firefox
     protonmail-desktop
+    protonvpn-gui
     spotify
     libreoffice
 

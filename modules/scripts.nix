@@ -11,7 +11,7 @@
       ###############
 
       # Where your portable SSD is mounted
-      SSD_MOUNT="/run/media/guy/BackupSSD"
+      SSD_MOUNT="/run/media/oggy/BackupSSD"
       SSD_BACKUP_DIR="$SSD_MOUNT/CosmicNix"
 
       # Git repos to sync (adjust these!)

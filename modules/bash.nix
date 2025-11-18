@@ -36,4 +36,9 @@
     sdn = "shutdown now";
     rb = "sudo nixos-rebuild switch";
   };
+
+  programs.bash.interactiveShellInit = ''
+      export PATH="$HOME/.emacs.d/bin:$PATH"
+    '';
 }
+

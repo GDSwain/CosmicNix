@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SSD_MOUNT="/run/media/guy/BackupSSD"
+SSD_MOUNT="/run/media/oggy/BackupSSD"
 SSD_BACKUP_DIR="$SSD_MOUNT/CosmicNix"
 
 GIT_REPOS=(

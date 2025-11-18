@@ -49,7 +49,7 @@ move_screenshots() {
   shopt -s nullglob
   local shots=( "SCREENSHOT_SRC"/Screenshot_* )
 
-  if (( ${#shots[@] == 0 )); then
+  if (( ${#shots[@]} == 0 )); then
     log "No screenshots to move."
   else
     log "Moving ${#shots[@]} screenshots to $SCREENSHOT_DST"

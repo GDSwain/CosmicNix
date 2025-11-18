@@ -46,16 +46,16 @@ sync_git_repo() {
 
 move_screenshots() {
   mkdir -p "$SCREENSHOT_DST"
-  shopt -s nullglob
-  local shots=( "SCREENSHOT_SRC"/Screenshot_* )
 
-  if (( ${#shots[@]} == 0 )); then
-    log "No screenshots to move."
+  # Do we have any matching screenshots?
+  if find "$SCREENSHOT_SRC" -maxdepth 1 -type f -name 'Screenshot_*.png' -print -quit | grep -q .; then
+    log "Moving screenshots from $SCREENSHOT_SRC to $SCREENSHOT_DST"
+
+    find "$SCREENSHOT_SRC" -maxdepth 1 -type f -name 'Screenshot_*.png' \
+      -print -exec mv {} "$SCREENSHOT_DST"/ \;
   else
-    log "Moving ${#shots[@]} screenshots to $SCREENSHOT_DST"
-    mv -- "${shots[@]}" "$SCREENSHOT_DST"/
+    log "No screenshots to move."
   fi
-  shopt -u nullglob
 }
 
 backup_home_to_ssd() {

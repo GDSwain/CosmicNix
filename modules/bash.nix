@@ -39,6 +39,9 @@
 
   programs.bash.interactiveShellInit = ''
       export PATH="$HOME/.emacs.d/bin:$PATH"
+
+      if command -v fastfetch >/dev/null 2>&1; then
+        fastfetch
+      fi
     '';
 }
-

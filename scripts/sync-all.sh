@@ -4,6 +4,9 @@ set -euo pipefail
 SSD_MOUNT="/run/media/oggy/BackupSSD"
 SSD_BACKUP_DIR="$SSD_MOUNT/CosmicNix"
 
+SCREENSHOT_SRC="$HOME/Pictures"
+SCREENSHOT_DST="$HOME/Pictures/Screenshots"
+
 GIT_REPOS=(
   "/etc/nixos"
   "$HOME/.doom.d"
@@ -41,6 +44,20 @@ sync_git_repo() {
   fi
 }
 
+move_screenshots() {
+  mkdir -p "$SCREENSHOT_DST"
+  shopt -s nullglob
+  local shots=( "SCREENSHOT_SRC"/Screenshot_* )
+
+  if (( ${#shots[@] == 0 )); then
+    log "No screenshots to move."
+  else
+    log "Moving ${#shots[@]} screenshots to $SCREENSHOT_DST"
+    mv -- "${shots[@]}" "$SCREENSHOT_DST"/
+  fi
+  shopt -u nullglob
+}
+
 backup_home_to_ssd() {
   if [ ! -d "$SSD_MOUNT" ]; then
     log "Portable SSD not found at $SSD_MOUNT – skipping backup."
@@ -66,6 +83,8 @@ log "Starting sync-all"
 for repo in "${GIT_REPOS[@]}"; do
   sync_git_repo "$repo"
 done
+
+move_screenshots
 
 backup_home_to_ssd
 

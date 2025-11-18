@@ -23,6 +23,7 @@
     btop
     neovim
     starship
+    fastfetch
 
     # ==================== #
     #   Dev / Code Tools   #

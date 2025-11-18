@@ -54,6 +54,7 @@ backup_home_to_ssd() {
   rsync -avh --delete \
     --exclude '.cache' \
     --exclude 'Downloads' \
+    --exclude '.config/Proton Mail' \
     "$HOME/Documents" \
     "$HOME/Projects" \
     "$HOME/.config" \

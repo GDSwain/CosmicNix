@@ -22,6 +22,7 @@
     fzf
     btop
     neovim
+    starship
 
     # ==================== #
     #   Dev / Code Tools   #

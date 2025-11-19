@@ -43,6 +43,7 @@
     protonvpn-gui
     spotify
     libreoffice
+    zeroad
 
     # ==================== #
     # Fonts (System-Wide)  #

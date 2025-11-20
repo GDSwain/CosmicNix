@@ -39,18 +39,12 @@
     # ==================== #
 
     firefox
+    pkgs.brave
     protonmail-desktop
     protonvpn-gui
     spotify
     libreoffice
     zeroad
-
-    # ==================== #
-    # Fonts (System-Wide)  #
-    # ==================== #
-
-    jetbrains-mono
-    fira-code
 
   ];
 }

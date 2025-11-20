@@ -11,6 +11,7 @@
       ./modules/locale.nix
       ./modules/nvidia.nix
       ./modules/users.nix
+      ./modules/fonts.nix
       ./modules/packages.nix
       ./modules/bash.nix
       ./modules/scripts.nix

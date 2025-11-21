@@ -17,7 +17,7 @@
 
     e = "nano";
     nv = "nvim";
-    emacs = "emacsclient -c -a ''";
+    emacs = "emacsclient -c & ''";
 
     fcd = "cd \"$(find . -type d 2>/dev/null | ${pkgs.fzf}/bin/fzf)\"";
     fe = "nano \"$(find . -type f 2>/dev/null | ${pkgs.fzf}/bin/fzf)\"";
@@ -31,7 +31,6 @@
     mv = "mv -i";
     rm = "rm -i";
 
-    please = "sudo";
     rbt = "systemctl reboot";
     sdn = "shutdown now";
     rb = "sudo nixos-rebuild switch";

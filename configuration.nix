@@ -6,8 +6,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/maintenance.nix
       ./modules/systemd.nix
       ./modules/system.nix
+      ./modules/firewall.nix
       ./modules/locale.nix
       ./modules/nvidia.nix
       ./modules/users.nix

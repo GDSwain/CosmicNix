@@ -94,6 +94,7 @@ backup_home_to_ssd() {
     --exclude '.cache' \
     --exclude 'Downloads' \
     --exclude '.config/Proton Mail' \
+    --exclude '.config/BraveSoftware' \
     "$HOME/Documents" \
     "$HOME/Projects" \
     "$HOME/.config" \

@@ -94,6 +94,7 @@ backup_home_to_ssd() {
     --exclude '.cache' \
     --exclude 'Downloads' \
     --exclude '.config/Proton Mail' \
+    --exclude '.config/BraveSoftware' \
     "$HOME/Documents" \
     "$HOME/Projects" \
     "$HOME/.config" \
@@ -108,7 +109,7 @@ backup_home_to_ssd() {
 log "Starting sync-all"
 
 for repo in "${GIT_REPOS[@]}"; do
-	sync_git_repo "$repo"
+  sync_git_repo "$repo"
 done
 
 move_screenshots
@@ -116,3 +117,4 @@ move_screenshots
 backup_home_to_ssd
 
 log "sync-all completed."
+

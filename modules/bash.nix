@@ -17,7 +17,7 @@
 
     e = "nano";
     nv = "nvim";
-    emacs = "emacsclient -c & ''";
+    emacs = "emacsclient -c -n";
 
     fcd = "cd \"$(find . -type d 2>/dev/null | ${pkgs.fzf}/bin/fzf)\"";
     fe = "nano \"$(find . -type f 2>/dev/null | ${pkgs.fzf}/bin/fzf)\"";

@@ -31,7 +31,7 @@
     
     git
     qemu
-    emacs
+    emacs-pgtk
     mesa-demos
 
     # ==================== #

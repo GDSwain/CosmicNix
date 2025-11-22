@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SSD_LABEL="BackupSSD"
-SSD_MOUNT="/run/media/$USER/$SSD_LABEL"
+SSD_MOUNT="/run/media/oggy/BackupSSD"
+SSD_BACKUP_DIR="$SSD_MOUNT/CosmicNix"
 
 SCREENSHOT_SRC="$HOME/Pictures"
 SCREENSHOT_DST="$HOME/Pictures/Screenshots"
@@ -59,33 +59,11 @@ move_screenshots() {
 }
 
 backup_home_to_ssd() {
-  # Try to make sure the SSD is mounted at SSD_MOUNT.
-  if ! mountpoint -q "$SSD_MOUNT"; then
-    log "Backup SSD not mounted at $SSD_MOUNT. Checking for device…"
-
-    if [ ! -b "/dev/disk/by-label/$SSD_LABEL" ]; then
-      log "Portable SSD with label '$SSD_LABEL' not found – skipping backup."
-      return
-    fi
-
-    log "Found device /dev/disk/by-label/$SSD_LABEL – attempting to mount via udisksctl…"
-    if udisksctl mount -b "/dev/disk/by-label/$SSD_LABEL" >/dev/null 2>&1; then
-      log "Mounted $SSD_LABEL."
-    else
-      log "Failed to mount $SSD_LABEL – skipping backup."
-      return
-    fi
-  else
-    log "Backup SSD already mounted at $SSD_MOUNT."
-  fi
-
-  # At this point, the drive should be mounted.
-  if ! mountpoint -q "$SSD_MOUNT"; then
-    log "Backup SSD still not mounted at $SSD_MOUNT – skipping backup."
+  if [ ! -d "$SSD_MOUNT" ]; then
+    log "Portable SSD not found at $SSD_MOUNT – skipping backup."
     return
   fi
 
-  SSD_BACKUP_DIR="$SSD_MOUNT/CosmicNix"
   mkdir -p "$SSD_BACKUP_DIR"
 
   log "Backing up home data to $SSD_BACKUP_DIR"
@@ -98,17 +76,12 @@ backup_home_to_ssd() {
     "$HOME/Projects" \
     "$HOME/.config" \
     "$SSD_BACKUP_DIR"
-
-  # Optional: unmount when done so the backup stays "offline"
-  log "Unmounting backup SSD…"
-  udisksctl unmount -b "/dev/disk/by-label/$SSD_LABEL" >/dev/null 2>&1 || \
-    log "Warning: failed to unmount $SSD_LABEL (it may be busy)."
 }
 
 log "Starting sync-all"
 
 for repo in "${GIT_REPOS[@]}"; do
-	sync_git_repo "$repo"
+  sync_git_repo "$repo"
 done
 
 move_screenshots

@@ -30,7 +30,8 @@
     # ==================== #
     
     git
-    qemu
+    qemu_kvm
+    virt-manager
     emacs-pgtk
     mesa-demos
 

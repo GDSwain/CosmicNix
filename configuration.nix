@@ -8,7 +8,9 @@
       ./hardware-configuration.nix
       ./modules/maintenance.nix
       ./modules/systemd.nix
+      ./modules/autostart.nix
       ./modules/system.nix
+      ./modules/virtualisation.nix
       ./modules/firewall.nix
       ./modules/locale.nix
       ./modules/nvidia.nix

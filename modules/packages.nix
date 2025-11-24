@@ -40,7 +40,7 @@
     # ==================== #
 
     firefox
-    pkgs.brave
+    brave
     protonmail-desktop
     protonvpn-gui
     spotify

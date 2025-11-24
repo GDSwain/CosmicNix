@@ -7,8 +7,9 @@ let
   # 👉 This is the *only* thing you edit:
   # names must match pkgs.<name> in nixpkgs
   autostartNames = [
-    "firefox"
-   # "protonvpn-gui"
+    "brave"
+    "protonvpn-gui"
+    "protonmail-desktop"
    # "emacs-pgtk"
     # add more here
   ];

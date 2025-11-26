@@ -34,6 +34,7 @@
     virt-manager
     emacs-pgtk
     mesa-demos
+    lsd
 
     # ==================== #
     #   GUI Applications   #
@@ -46,6 +47,19 @@
     spotify
     libreoffice
     zeroad
+
+    # ==================== #
+    #  Display Management  #
+    # ==================== #
+
+    wdisplays
+    cosmic-randr
+
+    # ==================== #
+    #   Unnecessary Shit   #
+    # ==================== #
+
+    cmatrix
 
   ];
 }

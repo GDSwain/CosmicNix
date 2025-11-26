@@ -22,6 +22,7 @@
     fcd = "cd \"$(find . -type d 2>/dev/null | ${pkgs.fzf}/bin/fzf)\"";
     fe = "nano \"$(find . -type f 2>/dev/null | ${pkgs.fzf}/bin/fzf)\"";
     fh = "eval \"$(history | ${pkgs.fzf}/bin/fzf | cut -c 8-)\"";
+    nos = "cd /etc/nixos";
 
     clr = "clear";
     cls = "clear";

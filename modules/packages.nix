@@ -24,6 +24,8 @@
     neovim
     starship
     fastfetch
+    tealdeer
+    cheat
 
     # ==================== #
     #   Dev / Code Tools   #

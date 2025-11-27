@@ -35,6 +35,8 @@
     rbt = "systemctl reboot";
     sdn = "shutdown now";
     rb = "sudo nixos-rebuild switch";
+
+    wtr = "curl wttr.in/vancouver";
   };
 
   programs.bash.interactiveShellInit = ''

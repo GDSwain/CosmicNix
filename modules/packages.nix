@@ -11,6 +11,16 @@
     curl
 
     # ==================== #
+    #    Security Tools    #
+    # =====================#
+
+    fido2luks
+    fido2-manage
+    yubikey-manager
+    yubikey-personalization
+    yubioath-flutter
+
+    # ==================== #
     #   CLI Enhancements   #
     # ==================== #
 

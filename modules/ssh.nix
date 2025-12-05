@@ -13,13 +13,17 @@
       Port 2222
   '';
 
-  # SSH server (optional — only if you want SSHD running)
+  # SSH server (optional — only if you want sshd running)
   services.openssh = {
     enable = false;  # set to true if you ever want sshd
   };
 
-  # SSH agent (the NixOS one)
+  # SSH agent (OpenSSH one, no GNOME/gcr)
   programs.ssh = {
+    # ❗ DO NOT set `enable` here; that option doesn't exist in NixOS.
     startAgent = true;
+    # agentTimeout = "1h";  # optional
   };
+  services.gnome.gcr-ssh-agent.enable = false;
 }
+

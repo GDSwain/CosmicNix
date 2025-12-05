@@ -9,16 +9,9 @@
       runAsRoot = true;         # simpler for now; can be hardened later
 
       swtpm.enable = true;      # software TPM (for Win11 etc.)
-
-      ovmf = {                  # UEFI firmware for VMs
-        enable = true;
-        packages = [
-          (pkgs.OVMFFull.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd
-        ];
-      };
+      # NOTE: libvirtd.qemu.ovmf has been removed in newer NixOS.
+      # OVMF/UEFI firmwares from QEMU are now available by default,
+      # so we don't configure them here anymore.
     };
   };
 

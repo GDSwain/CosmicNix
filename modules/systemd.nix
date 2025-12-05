@@ -1,11 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  systemd.user.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
-
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
+  systemd.settings.Manager = {
+    DefaultTimeoutStartSec = "30s";
+    DefaultTimeoutStopSec  = "15s";
+  };
 }
+

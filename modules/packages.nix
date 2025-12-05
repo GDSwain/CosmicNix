@@ -59,6 +59,8 @@
     spotify
     libreoffice
     zeroad
+    eww
+    pavucontrol
 
     # ==================== #
     #  Display Management  #
@@ -72,6 +74,22 @@
     # ==================== #
 
     cmatrix
+
+    # ==================== #
+    #        Sway          #
+    # ==================== #
+
+    fuzzel
+    xfce.thunar
+    wezterm
+    grim
+    slurp
+    wl-clipboard
+    mako
+    swaybg
+    swayidle
+    swaylock
+    waybar
 
   ];
 }

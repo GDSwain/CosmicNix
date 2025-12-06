@@ -14,32 +14,28 @@ let
 
     # Proton Mail on workspace 1 (left)
     swaymsg workspace 1
+    sleep 1.0
     swaymsg exec proton-mail
-
-    # Messages on workspace 2 (left) – fill these when you know the clients
-    # swaymsg workspace 2
-    # swaymsg exec <messages-client>
-
-    # WhatsApp on workspace 2 (left)
-    # swaymsg workspace 2
-    # swaymsg exec <whatsapp-client>
+    sleep 1.0
 
     # Spotify on workspace 3 (left)
     swaymsg workspace 3
+    sleep 1.0
     swaymsg exec spotify
+    sleep 1.0
 
     # Browser on workspace 4 (middle)
     swaymsg workspace 4
+    sleep 1.0
     swaymsg exec brave
+    sleep 1.0
 
     # Proton VPN on workspace 5 (middle)
     swaymsg workspace 5
+    sleep 1.0
     swaymsg exec protonvpn-app
+    sleep 1.0
     
-    # Emacs on workspace 7 (right)
-    swaymsg workspace 7
-    swaymsg exec emacs-pgtk
-
   '';
 in {
   environment.systemPackages = [ startSession ];

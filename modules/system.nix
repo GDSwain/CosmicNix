@@ -11,6 +11,6 @@
 
   environment.variables = {
     XCURSOR_THEME = "Bibata-Modern-Classic";
-    XCURSOR_SIZE = "20";
+   # XCURSOR_SIZE = "20";
   };
 }

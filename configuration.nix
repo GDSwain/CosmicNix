@@ -1,4 +1,4 @@
-# This Is The Main Config Where Everything Else Is Linked To
+# This Is The Main Config Where Everything Else Is Linked To, So Beware #
 
 { config, pkgs, ... }:
 

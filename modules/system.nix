@@ -8,4 +8,9 @@
   networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  environment.variables = {
+    XCURSOR_THEME = "Bibata-Modern-Classic";
+    XCURSOR_SIZE = "20";
+  };
 }

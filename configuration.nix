@@ -24,6 +24,7 @@
       ./modules/emacs.nix
       ./modules/cosmic.nix
       ./modules/sway.nix
+      ./modules/bluetooth.nix
     ];
 
   system.stateVersion = "25.05"; # Did you read the comment?

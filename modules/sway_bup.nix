@@ -6,17 +6,19 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true; # gtk theming/portals
-
-    # 25.11: xwayland is an option set
-    xwayland.enable = true;
-
-    # Shell snippet run just before sway starts
-    extraSessionCommands = ''
-      # Run your random wallpaper script in the background
-      # Use $HOME or ~, since this is real shell code
-      $HOME/etc/nixos/scripts/sway-random-wallpaper.sh &
-    '';
   };
+
+  # Programs Sway will launch
+#  environment.systemPackages = with pkgs; [
+#    wezterm          # terminal
+#    fuzzel           # launcher
+#    xfce.thunar      # file manager
+#    grim             # screenshots
+#    slurp
+#    wl-clipboard     # wl-copy / wl-paste
+#    mako             # notifications (optional)
+#    swaybg	     # wallpaper manager
+#  ];
 
   # Nice to have for Thunar (mounting, trash, smb, etc.)
   services.gvfs.enable = true;
@@ -27,6 +29,9 @@
   # Portals for screen sharing / flatpaks under Wayland
   xdg.portal = {
     enable = true;
+
+    wlr.enable = true;
+
     extraPortals = with pkgs; [ xdg-desktop-portal-wlr ];
   };
 }

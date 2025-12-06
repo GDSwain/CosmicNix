@@ -9,6 +9,8 @@
 
     wget
     curl
+    bibata-cursors
+    adwaita-icon-theme
 
     # ==================== #
     #    Security Tools    #
@@ -47,12 +49,13 @@
     emacs-pgtk
     mesa-demos
     lsd
+    xfce.mousepad
 
     # ==================== #
     #   GUI Applications   #
     # ==================== #
 
-    firefox
+    blueman
     brave
     protonmail-desktop
     protonvpn-gui
